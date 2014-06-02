@@ -1,0 +1,12 @@
+<f:layout name="Default" />
+
+<f:section name="Title">Wähler-Ansicht</f:section>
+
+<f:section name="Content">
+	<ul>
+		<li>Vorname: {voter.givenName}</li>
+		<li>Nachname: {voter.familyName}</li>
+		<li>Fakultät: {voter.discriminators.department.value}</li>
+		<li>Matrikelnummer: {voter.discriminators.matriculationNumber.value}</li>
+	</ul>
+</f:section>
