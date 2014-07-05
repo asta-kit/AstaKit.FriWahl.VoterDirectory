@@ -73,7 +73,7 @@ class VoterSearch {
 			return;
 		}
 
-		$this->results = $this->electionRepository->findVotersByCriteria($this->criteria);
+		$this->results = $this->electionRepository->findVotersByCriteria($this->election, $this->criteria);
 	}
 
 	/**
