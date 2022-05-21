@@ -10,11 +10,7 @@ AstaKit:
               type: "discriminator"
               name: "matriculationNumber"
             -
-              # e.g. Sullivan, Glotzkowski
-              type: "property"
-              name: "familyName"
-            -
-              # e.g. James P., Mike
+              # e.g. James P. Hoffmann, Mike Schulz
               type: "property"
               name: "givenName"
             -

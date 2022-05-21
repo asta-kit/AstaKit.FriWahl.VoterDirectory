@@ -7,10 +7,8 @@
 <f:form action="search" method="GET" object="{search}" name="search">
 	<f:form.hidden property="election" value="{election}" />
 
-	<label for="search[criteria][fields][givenName]">Vorname</label>
+	<label for="search[criteria][fields][givenName]">Name</label>
 	<f:form.textfield property="criteria.fields.givenName" />
-	<label for="search[criteria][fields][familyName]">Nachname</label>
-	<f:form.textfield property="criteria.fields.familyName" />
 
 	<!-- TODO add discriminators -->
 
@@ -20,8 +18,7 @@
 <table>
 	<thead>
 	<tr>
-		<th>Vorname</th>
-		<th>Nachname</th>
+		<th>Name</th>
 		<th>Fakultät</th>
 	</tr>
 	</thead>
@@ -29,7 +26,6 @@
 	<f:for each="{search.results}" as="voter">
 	<tr>
 		<td><f:link.action action="show" arguments="{voter: voter}">{voter.givenName}</f:link.action></td>
-		<td><f:link.action action="show" arguments="{voter: voter}">{voter.familyName}</f:link.action></td>
 		<td>{voter.discriminators.department.value}</td>
 	</tr>
 	</f:for>

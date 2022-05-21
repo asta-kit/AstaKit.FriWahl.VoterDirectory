@@ -82,16 +82,15 @@ class ImportTask {
 	public function execute() {
 		foreach ($this->sourceFile as $key => $voterInformation) {
 			$givenName = $voterInformation['properties']['givenName'];
-			$familyName = $voterInformation['properties']['familyName'];
 
-			if (!$givenName || !$familyName) {
+			if (!$givenName) {
 				$this->importResults->forProperty($key)->addError(new Error\Error('Ungültiger Name'));
 				continue;
 			}
 
 			// TODO check if voter with same name exists in database, add warning if yes
 
-			$voter = new CoreModel\EligibleVoter($this->election, $givenName, $familyName);
+			$voter = new CoreModel\EligibleVoter($this->election, $givenName);
 
 			foreach ($voterInformation['discriminators'] as $name => $value) {
 				$voter->addDiscriminator($name, $value);

@@ -30,7 +30,7 @@ class ImportFileLineParserTest extends UnitTestCase {
 			'fields' => array(
 				array(
 					'type' => 'property',
-					'name' => 'familyName',
+					'name' => 'givenName',
 				),
 				array(
 					'type' => 'property',
@@ -47,7 +47,7 @@ class ImportFileLineParserTest extends UnitTestCase {
 DOC;
 		$parsingResult = $parser->parseLine($lineToParse);
 
-		$this->assertEquals('the name', $parsingResult['properties']['familyName']);
+		$this->assertEquals('the name', $parsingResult['properties']['givenName']);
 		$this->assertEquals('another field\'s contents', $parsingResult['properties']['anotherField']);
 	}
 
@@ -90,7 +90,7 @@ DOC;
 			'fields' => array(
 				array(
 					'type' => 'property',
-					'name' => 'familyName',
+					'name' => 'givenName',
 				),
 			),
 		);
@@ -103,7 +103,7 @@ DOC;
 DOC;
 		$parsingResult = $parser->parseLine($lineToParse);
 
-		$this->assertEquals('the name', $parsingResult['properties']['familyName']);
+		$this->assertEquals('the name', $parsingResult['properties']['givenName']);
 	}
 
 	/**
@@ -116,7 +116,7 @@ DOC;
 			'fields' => array(
 				array(
 					'type' => 'property',
-					'name' => 'familyName',
+					'name' => 'givenName',
 					'preProcessing' => array(
 						'trim',
 					)
@@ -132,7 +132,7 @@ DOC;
 DOC;
 		$parsingResult = $parser->parseLine($lineToParse);
 
-		$this->assertEquals('the name with spaces around', $parsingResult['properties']['familyName']);
+		$this->assertEquals('the name with spaces around', $parsingResult['properties']['givenName']);
 	}
 
 	/**
